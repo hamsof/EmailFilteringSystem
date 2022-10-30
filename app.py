@@ -8,7 +8,8 @@ data_email = ""
 msg = "" 
 
 #loading models
-classifier = pickle.load(open('NaiveModel', 'rb'))
+filename = 'NaiveModel'
+classifier = pickle.load(open(filename, 'rb'))
 cv = pickle.load(open('cv-transform.pkl','rb'))
 
 
