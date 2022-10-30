@@ -19,6 +19,7 @@ import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 
 def model(msg):    
@@ -74,7 +75,6 @@ def model(msg):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=5, shuffle=True)
     model = MultinomialNB()
 
-
     model.fit(X_train, y_train)
     predictions = model.predict(X_test)
 
@@ -92,8 +92,6 @@ def model(msg):
                     ('model' , MultinomialNB())
                     ])
 
-    #pickle.dump(model, open('MNBmodel.pkl', 'wb')) 
-   
     pipe.fit(X=X_train, y=y_train)
     new_sms = [msg]
     return pipe.predict(new_sms)                
