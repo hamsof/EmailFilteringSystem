@@ -70,6 +70,6 @@ model = MultinomialNB()
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 
-filename = 'NaiveModel'
+filename = 'NaiveModel.pkl'
 pickle.dump(model, open(filename, 'wb'))
     
